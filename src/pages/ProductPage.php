@@ -4,7 +4,6 @@
 <head>
     <title>EOS - PRODUCTS</title>
     <?php require_once $_SERVER["DOCUMENT_ROOT"]."/src/utils/headerLinks.php";?>
-    
 </head>
 
 <body class="no-sidebar is-preload">
@@ -20,16 +19,24 @@
                     <div class="col-12 col-12-mobile imp-mobile" id="content">
                         <article id="main">
                             <header>
-                                <h2><a href="#">Einkaufswagen</a></h2>
+                                <h2><a href="#">Produkte</a></h2>
                                 <p>
-                                    Hier sind deine Einkäufe.
+                                    Gas, Gas und Gas
                                 </p>
                             </header>
-                            <?php 
-                                include_once $_SERVER["DOCUMENT_ROOT"].'/src/controller/ProductController.php';
-                                $rep = new ProductController();
-                                $rep->products();
-                            ?>
+                            <div class="productList">
+                                <?php foreach ($data as $product) : ?>
+                                    <div class="card productListProduct" style="width: 18rem;">
+                                        <img src="<?= $product->IMAGE_PATH == "/" ? "/src/images/pic03.jpg" : $product->IMAGE_PATH ?> " class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><?= $product->NAME ?></h5>
+                                            <p class="card-text"><?= $product->DESCRIPTION ?></p>
+                                            <p class="card-text"><small class="text-muted"><?= $product->COST ?></small></p>
+                                            <a href="?=<?= $product->ID ?>" class="btn btn-primary">BUY</a>
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
                         </article>
                     </div>
                 </div>
@@ -50,7 +57,14 @@
     <script src="/src/scripts/breakpoints.min.js"></script>
     <script src="/src/scripts/util.js"></script>
     <script src="/src/scripts/main.js"></script>
-
+    <style>
+        .productList {
+            display: flex; 
+            flex-direction:row; 
+            flex-wrap: wrap; 
+            justify-content: space-around;
+        }
+    </style>
 </body>
 
 </html>

@@ -7,25 +7,15 @@
             $this->productRepository = new ProductRepository();
         }
 
-        public function products() {
-            $data = $this->getProducts();
-
-            view("ProductList", $data);
+        public function getProducts() : array {
+            return $this->productRepository->findAll();
         }
 
-        private function getProducts() : array {
-            return $this->productRepository->findAll();
+        public function loadProductPage() : void {
+            viewPage("ProductPage", $this->getProducts());
         }
     }
 
-
-
-
-
-
-
-
-
-
-
+    $rep = new ProductController();
+    $rep->loadProductPage()
 ?>

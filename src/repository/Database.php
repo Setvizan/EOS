@@ -1,5 +1,4 @@
 <?php 
-
 define("DB_HOST", "localhost");
 define("DB_USER", "nayun_dbuser");
 define("DB_PASS", "exGc6kvwpfxyFpAj");
