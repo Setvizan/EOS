@@ -8,12 +8,7 @@
 
 <head>
     <title>EOS - ACCOUNT</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="/src/styles/all.css" />
-    <noscript>
-        <link rel="stylesheet" href="/src/styles/noscript.css" />
-    </noscript>
+    <?php require_once $_SERVER["DOCUMENT_ROOT"]."/src/utils/headerLinks.php";?>
 </head>
 
 <body class="left-sidebar is-preload">
@@ -36,15 +31,25 @@
                         </div>
                         <input type="hidden" name="type" value="login" />
                         <button type="submit" class="btn btn-primary login-form-button">GO</button>
-
-                        <?php if (isset($data["ERROR"])) : ?>
+                        <a href="/src/pages/AccountRegistration.php" class="login-form-button">register</a>
+                        <?php if (isset($data["SUCCESS"])) : ?>
+                            <div class="successMessage"><?= $data["SUCCESS"] ?></div>
+                        <?php elseif(isset($data["ERROR"])): ?>
                             <div class="errorMessage"><?= $data["ERROR"] ?></div>
                         <?php endif; ?>
-
                     </form>
                 </div>
             <?php elseif (isset($_SESSION["userId"]) == true) : ?>
-                <div> u damn potato</div>
+                <div class="card accountInfo" style="width: 36rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Account Information</h5>
+                        <p class="card-text">EMAIL - <?= $data[0]->EMAIL ?></p>
+                        <p class="card-text">FIRSTNAME - <?= $data[0]->FIRST_NAME ?></p>
+                        <p class="card-text">LASTNAME - <?= $data[0]->LAST_NAME ?></p>
+                        <p class="card-text">CUSTOMERID - <?= $data[0]->ID ?></p>
+                        <a href="/src/site/AccountController.php?type=logout" class="btn btn-danger">LOG OUT</a>
+                    </div>
+                </div>
             <?php endif; ?>
         </div>
 
@@ -83,6 +88,18 @@
             margin: 0 auto;
             display: block;
             text-align: center;
+        }
+
+        .successMessage {
+            color: green;
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+        }
+
+        .accountInfo {
+            display: block; 
+            margin: 0 auto;
         }
     </style>
 </body>

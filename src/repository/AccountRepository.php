@@ -23,6 +23,13 @@ class AccountRepository
         return $this->db->resultSet();
     }
 
+    function countUserByEmail($email): int
+    {
+        $this->db->query("SELECT * FROM `USER` WHERE EMAIL = :email");
+        $this->db->bind(':email', $email);
+        return $this->db->rowCount();
+    }
+
     function findUserByID($id): array
     {
         $this->db->query("SELECT * FROM `USER` WHERE ID = :id");

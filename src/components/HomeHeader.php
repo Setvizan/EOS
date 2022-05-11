@@ -30,7 +30,7 @@ $pdata = $rep->findAll();
                 </ul>
             </li>
             <li><a href="/src/pages/AboutUs.php">About Us</a></li>
-            <li><a href="/src/pages/ShoppingCart.php" class="fa-solid fa-cart-shopping"><span class="label">Shopping Cart</span></a></li>
+            <li><a href="/src/site/ShoppingCartController.php" class="fa-solid fa-cart-shopping"><span class="label">Shopping Cart</span></a></li>
             <li><a href="/src/site/AccountController.php">My Account</a></li> <!-- this will be checked with php when login is available-->
         </ul>
     </nav>

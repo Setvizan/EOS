@@ -32,7 +32,7 @@
                                             <h5 class="card-title"><?= $product->NAME ?></h5>
                                             <p class="card-text"><?= $product->DESCRIPTION ?></p>
                                             <p class="card-text"><small class="text-muted"><?= $product->COST ?></small></p>
-                                            <a href="?=<?= $product->ID ?>" class="btn btn-primary">BUY</a>
+                                            <a href="/src/site/ShoppingCartController.php?toCart=<?= $product->ID ?>" class="btn btn-primary">BUY</a>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>

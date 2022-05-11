@@ -14,8 +14,19 @@
         public function getUser($id) : array {
             return $this->accountRepository->findAll();
         }
+
+        public function countUserByEmail($email) : int {
+            return $this->accountRepository->countUserByEmail($email);
+        }
+
+        public function getUserByEmail($email) : array {
+            return $this->accountRepository->findUserByEmail($email);
+        }
+
+
         public function checkLogin($email, $password) : ?object {
             $user = $this->accountRepository->findUserByEmail($email);
+            if($user == null) return null;
             if($user[0]->PASSWORD == $password) return $user[0];
             return null;
         }
@@ -25,17 +36,31 @@
             viewPage("Account", $data);
         }
         
+        public function createUser($email, $firstname, $lastname, $password) : bool {
+            return $this->accountRepository->createUser($email, $firstname, $lastname, $password);
+        }
+
         public function loadLoginPage($data) : void {
             // data is used for errors if existing
             viewPage("Account", $data);
+        }
+
+        public function loadRegistrationPage($data) : void {
+            // data is used for errors if existing
+            viewPage("AccountRegistration", $data);
         }
     }
 
     session_start();
     $rep = new AccountController();
 
+    if(isset($_GET["type"]) && $_GET["type"] == "logout"){
+        session_unset();
+        session_destroy();
+    }
+
     //Check if login post from forum
-    if(isset($_POST["type"]) && $_POST["type"] = "login"){
+    if(isset($_POST["type"]) && $_POST["type"] == "login"){
         $email = $_POST["email"];
         $password = $_POST["password"];
         $user = $rep->checkLogin($email, $password);
@@ -43,6 +68,27 @@
         if($user === null) $rep->loadLoginPage($data);
         $_SESSION["userId"] = $user->ID;
     }
+    $regist = false;
+    if(isset($_POST["type"]) && $_POST["type"] == "register"){
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+        $firstname = $_POST["firstname"];
+        $lastname = $_POST["lastname"];
+        $uExists = $rep->countUserByEmail($email);
+        $data["ERROR"] = "Email already exists";
+        if($uExists > 0) {
+            $rep->loadRegistrationPage($data);
+            $regist = true;
+        } elseif($rep->createUser($email, $firstname, $lastname, $password)){
+            $data["SUCCESS"] = "Registration successful! Try logging in!";
+            $rep->loadLoginPage($data);
+        }
+    }
 
-    $rep->loadLoginPage([]);
+    if(isset($_SESSION["userId"]) == true){
+        $rep->loadUserPage($_SESSION["userId"]);
+    } elseif($regist == false) {
+        $rep->loadLoginPage([]);
+    }
+    
 ?>
