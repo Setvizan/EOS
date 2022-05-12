@@ -7,7 +7,7 @@
 <html>
 
 <head>
-    <title>EOS - ACCOUNT</title>
+    <title>EOS - MEIN KONTO</title>
     <?php require_once $_SERVER["DOCUMENT_ROOT"]."/src/utils/headerLinks.php";?>
 </head>
 
@@ -30,8 +30,8 @@
                             <input type="password" class="form-control login-form-input" id="password" name="password" placeholder="password" required />
                         </div>
                         <input type="hidden" name="type" value="login" />
-                        <button type="submit" class="btn btn-primary login-form-button">GO</button>
-                        <a href="/src/pages/AccountRegistration.php" class="login-form-button">register</a>
+                        <button type="submit" class="btn btn-primary login-form-button">EINLOGGEN</button>
+                        <a href="/src/pages/AccountRegistration.php" class="login-form-button">registrieren</a>
                         <?php if (isset($data["SUCCESS"])) : ?>
                             <div class="successMessage"><?= $data["SUCCESS"] ?></div>
                         <?php elseif(isset($data["ERROR"])): ?>
@@ -47,7 +47,7 @@
                         <p class="card-text">FIRSTNAME - <?= $data[0]->FIRST_NAME ?></p>
                         <p class="card-text">LASTNAME - <?= $data[0]->LAST_NAME ?></p>
                         <p class="card-text">CUSTOMERID - <?= $data[0]->ID ?></p>
-                        <a href="/src/site/AccountController.php?type=logout" class="btn btn-danger">LOG OUT</a>
+                        <a href="/src/site/AccountController.php?type=logout" class="btn btn-danger">AUSLOGGEN</a>
                     </div>
                 </div>
             <?php endif; ?>

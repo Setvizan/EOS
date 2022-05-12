@@ -11,11 +11,24 @@
             return $this->productRepository->findAll();
         }
 
+        public function getProduct($id) : array {
+            return $this->productRepository->find($id);
+        }
+
         public function loadProductPage() : void {
             viewPage("ProductPage", $this->getProducts());
+        }
+
+        public function loadProductDetail($id) : void {
+            viewPage("ProductPage", $this->getProduct($id));
         }
     }
 
     $rep = new ProductController();
-    $rep->loadProductPage()
+    
+    if(isset($_GET["pid"])){
+        $rep->loadProductDetail($_GET["pid"]);
+    } else {
+        $rep->loadProductPage();
+    }
 ?>

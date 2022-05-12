@@ -7,7 +7,7 @@
 <html>
 
 <head>
-    <title>EOS - SHOPPING CART</title>
+    <title>EOS - WARENKORB</title>
     <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/src/utils/headerLinks.php"; ?>
 </head>
 
@@ -22,6 +22,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-12-mobile imp-mobile" id="content">
+                        <header>
+                            <h2><a href="/src/site/ProductController.php">Warenkorb</a></h2>
+                        </header>
                         <?php foreach ($data as $product) : ?>
                             <div class="card mt-4">
                                 <div class="row">
@@ -46,10 +49,12 @@
                 </div>
                 <hr />
                 <div>
-                    TOTAL: <?php $ttl = 0.0; foreach($data as $p) $ttl+=$p->COST; echo $ttl; ?>
+                    TOTAL: <?php $ttl = 0.0;
+                            foreach ($data as $p) $ttl += $p->COST;
+                            echo $ttl; ?>
                 </div>
                 <div>
-                    <a href="/src/site/CheckoutController.php" class="btn btn-primary mt-3">CHECKOUT</a>
+                    <a href="/src/site/CheckoutController.php" class="btn btn-primary mt-3">ZAHLEN</a>
                 </div>
             </div>
 

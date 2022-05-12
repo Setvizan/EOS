@@ -16,17 +16,17 @@ $pdata = $rep->findAll();
     <!-- Nav -->
     <nav id="nav">
         <ul>
-            <li><a href="/index.php">Home</a></li>
-            <li><a href="/src/site/ProductController.php">Products</a>
+            <li><a href="/index.php">STARTSEITE</a></li>
+            <li><a href="/src/site/ProductController.php">PRODUKTE</a>
                 <ul>
                     <?php foreach ($pdata as $product): ?>
                         <li><a href="<?= "/src/site/ProductController.php?pid=".$product->ID ?>"><?= $product->NAME ?></a></li>
                     <?php endforeach; ?>
                 </ul>
             </li>
-            <li><a href="/src/pages/AboutUs.php">About Us</a></li>
-            <li><a href="/src/site/ShoppingCartController.php" class="fa-solid fa-cart-shopping"><span class="label">Shopping Cart</span></a></li>
-            <li><a href="/src/site/AccountController.php">My Account</a></li> <!-- this will be checked with php when login is available-->
+            <li><a href="/src/pages/AboutUs.php">ÜBER UNS</a></li>
+            <li><a href="/src/site/ShoppingCartController.php" class="fa-solid fa-cart-shopping"><span class="label">WARENKORB</span></a></li>
+            <li><a href="/src/site/AccountController.php">MEIN KONTO</a></li> <!-- this will be checked with php when login is available-->
         </ul>
     </nav>
 </div>

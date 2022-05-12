@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>EOS - PRODUCTS</title>
+    <title>EOS - PRODUKTE</title>
     <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/src/utils/headerLinks.php"; ?>
 </head>
 
@@ -18,14 +18,38 @@
                 <div class="row">
                     <div class="col-12 col-12-mobile imp-mobile" id="content">
                         <?php if (isset($_GET["pid"])) : ?>
-                            <article id="main">
-                                <header>
-                                    <a href="/src/site/ProductController.php" class="btn btn-primary">< BACK</a>
-                                </header>
-                                <div>
-                                    Why the fuck does this exist
-                                </div>
-                            </article>
+                            <div>
+                                <a href="/src/site/ProductController.php" class="btn btn-primary mt-3 mb-3"> < ZURÜCK</a>
+                            </div>
+                            <?php foreach ($data as $product) : ?>
+                                <section id="main" class="card container">
+                                    <header>
+                                        <h2><?php echo $product->NAME ?></h2>
+                                    </header>
+                                    <div class="row">
+                                            <div class="col-12">
+                                                <section class="box">
+                                                    <div style="display: flex; width: 100%; justify-content: space-between;">
+                                                        <div style="width: 20%;">
+                                                            <span class="image fit">
+                                                                <img src="<?= $product->IMAGE_PATH == "/" ? "/src/images/pic03.jpg" : $product->IMAGE_PATH ?> " alt="...">
+                                                            </span>
+                                                        </div>
+                                                        <div style="width: 75%">
+                                                            <p><small><?= $product->LONG_DESCRIPTION ?></small></p>
+                                                            <p><small class="text-muted"><?= $product->COST ?></small></p>
+                                                            <a href="/src/site/ShoppingCartController.php?toCart=<?= $product->ID ?>" class="btn btn-primary">BUY</a>
+                                                        </div>
+                                                    </div>
+                                                    <div style="width: 100%; display: flex; justify-content: flex-end">
+                                                        <h3><?= $product->COST ?></h3>
+                                                    </div>
+
+                                                </section>
+                                            </div>
+                                        </div>
+                                </section>
+                            <?php endforeach; ?>
                         <?php else : ?>
                             <article id="main">
                                 <header>

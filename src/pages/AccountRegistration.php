@@ -7,7 +7,7 @@
 <html>
 
 <head>
-    <title>EOS - ACCOUNT</title>
+    <title>EOS - REGISTRATION</title>
     <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/src/utils/headerLinks.php"; ?>
 </head>
 
@@ -35,7 +35,7 @@
                         <input type="password" class="form-control register-form-input" id="password" name="password" placeholder="password" required />
                     </div>
                     <input type="hidden" name="type" value="register" />
-                    <button type="submit" class="btn btn-primary register-form-button">REGISTER</button>
+                    <button type="submit" class="btn btn-primary register-form-button">REGISTRIEREN</button>
                     <?php if (isset($data["ERROR"])) : ?>
                         <div class="errorMessage"><?= $data["ERROR"] ?></div>
                     <?php endif; ?>

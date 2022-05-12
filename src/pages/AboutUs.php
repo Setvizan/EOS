@@ -7,7 +7,7 @@
 <html>
 
 <head>
-    <title>EOS - ABOUT US</title>
+    <title>EOS - ÜBER UNS</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/src/styles/all.css" />
@@ -29,19 +29,16 @@
                         <hr class="first" />
                         <section>
                             <header>
-                                <h3><a href="#">Accumsan sed penatibus</a></h3>
+                                <h3><a href="#">Eine Kleine Gas Firma</a></h3>
                             </header>
                             <p>
                                 Dolor sed fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam porttitor phasellus tempus cubilia ultrices tempor sagittis tellus ante diam nec penatibus dolor cras magna tempus feugiat veroeros.
                             </p>
-                            <footer>
-                                <a href="#" class="button">Learn More</a>
-                            </footer>
                         </section>
                         <hr />
                         <section>
                             <header>
-                                <h3><a href="#">Sed lorem etiam consequat</a></h3>
+                                <h3><a href="#">Unsere Kontakt Personen</a></h3>
                             </header>
                             <p>
                                 Tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
@@ -93,17 +90,14 @@
                                     </p>
                                 </div>
                             </div>
-                            <footer>
-                                <a href="#" class="button">Magna Adipiscing</a>
-                            </footer>
                         </section>
                     </div>
                     <div class="col-8 col-12-mobile imp-mobile" id="content">
                         <article id="main">
                             <header>
-                                <h2><a href="#">Left Sidebar</a></h2>
+                                <h2><a href="#">Über uns</a></h2>
                                 <p>
-                                    Morbi convallis lectus malesuada sed fermentum dolore amet
+                                    Eine Reise in die Gas Industrie
                                 </p>
                             </header>
                             <a href="#" class="image featured"><img src="/src/images/pic06.jpg" alt="" /></a>
@@ -114,7 +108,7 @@
                             </p>
                             <section>
                                 <header>
-                                    <h3>Ultrices tempor sagittis nisl</h3>
+                                    <h3>Das Ziel</h3>
                                 </header>
                                 <p>
                                     Nascetur volutpat nibh ullamcorper vivamus at purus. Cursus ultrices porttitor sollicitudin imperdiet at pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis feugiat. Neque primis ligula cum erat aenean
@@ -128,7 +122,7 @@
                             </section>
                             <section>
                                 <header>
-                                    <h3>Augue euismod feugiat tempus</h3>
+                                    <h3>Die Zukunft</h3>
                                 </header>
                                 <p>
                                     Pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit ut nunc urna volutpat donec cubilia commodo
@@ -137,36 +131,6 @@
                             </section>
                         </article>
                     </div>
-                </div>
-                <hr />
-                <div class="row">
-                    <article class="col-4 col-12-mobile special">
-                        <a href="#" class="image featured"><img src="/src/images/pic07.jpg" alt="" /></a>
-                        <header>
-                            <h3><a href="#">Gravida aliquam penatibus</a></h3>
-                        </header>
-                        <p>
-                            Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-                        </p>
-                    </article>
-                    <article class="col-4 col-12-mobile special">
-                        <a href="#" class="image featured"><img src="/src/images/pic08.jpg" alt="" /></a>
-                        <header>
-                            <h3><a href="#">Sed quis rhoncus placerat</a></h3>
-                        </header>
-                        <p>
-                            Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-                        </p>
-                    </article>
-                    <article class="col-4 col-12-mobile special">
-                        <a href="#" class="image featured"><img src="/src/images/pic09.jpg" alt="" /></a>
-                        <header>
-                            <h3><a href="#">Magna laoreet et aliquam</a></h3>
-                        </header>
-                        <p>
-                            Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-                        </p>
-                    </article>
                 </div>
             </div>
 

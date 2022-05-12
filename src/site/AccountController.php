@@ -12,7 +12,7 @@
         }
 
         public function getUser($id) : array {
-            return $this->accountRepository->findAll();
+            return $this->accountRepository->findUserByID($id);
         }
 
         public function countUserByEmail($email) : int {
@@ -27,7 +27,7 @@
         public function checkLogin($email, $password) : ?object {
             $user = $this->accountRepository->findUserByEmail($email);
             if($user == null) return null;
-            if($user[0]->PASSWORD == $password) return $user[0];
+            if($user[0]->PASSWORD == hash("sha256", $password)) return $user[0];
             return null;
         }
 
@@ -37,7 +37,7 @@
         }
         
         public function createUser($email, $firstname, $lastname, $password) : bool {
-            return $this->accountRepository->createUser($email, $firstname, $lastname, $password);
+            return $this->accountRepository->createUser($email, hash("sha256", $password), $firstname, $lastname);
         }
 
         public function loadLoginPage($data) : void {
@@ -60,14 +60,19 @@
     }
 
     //Check if login post from forum
+    $loginfail = false;
     if(isset($_POST["type"]) && $_POST["type"] == "login"){
         $email = $_POST["email"];
         $password = $_POST["password"];
         $user = $rep->checkLogin($email, $password);
         $data["ERROR"] = "Invalid Login";
-        if($user === null) $rep->loadLoginPage($data);
+        if($user === null) {
+            $rep->loadLoginPage($data);
+            $loginfail = true;
+        }
         $_SESSION["userId"] = $user->ID;
     }
+    
     $regist = false;
     if(isset($_POST["type"]) && $_POST["type"] == "register"){
         $email = $_POST["email"];
@@ -87,7 +92,7 @@
 
     if(isset($_SESSION["userId"]) == true){
         $rep->loadUserPage($_SESSION["userId"]);
-    } elseif($regist == false) {
+    } elseif($regist == false && $loginfail == false) {
         $rep->loadLoginPage([]);
     }
     

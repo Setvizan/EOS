@@ -32,7 +32,7 @@ class AccountRepository
 
     function findUserByID($id): array
     {
-        $this->db->query("SELECT * FROM `USER` WHERE ID = :id");
+        $this->db->query("SELECT u.* FROM `USER` as u WHERE u.ID = :id");
         $this->db->bind(':id', $id);
         return $this->db->resultSet();
     }

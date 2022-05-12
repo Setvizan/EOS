@@ -18,9 +18,9 @@
         <!-- Banner -->
         <section id="banner">
             <header>
-                <h2>Hi. You're looking at <strong>EOS</strong>.</h2>
+                <h2>Hallo das ist <strong>EOS</strong>.</h2>
                 <p>
-                    I didn't do this magic
+                    Gas, Gas und Gas für alle!
                 </p>
             </header>
         </section>
@@ -31,7 +31,7 @@
             <article id="main" class="container special">
                 <a href="#" class="image featured"><img src="/src/images/pic06.jpg" alt="" /></a>
                 <header>
-                    <h2><a href="#">Sed massa imperdiet magnis</a></h2>
+                    <h2><a href="/src/pages/AboutUs.php">Über uns</a></h2>
                     <p>
                         Sociis aenean eu aenean mollis mollis facilisis primis ornare penatibus aenean. Cursus ac enim pulvinar curabitur morbi convallis. Lectus malesuada sed fermentum dolore amet.
                     </p>
@@ -43,50 +43,9 @@
                     natoque aenean scelerisque.
                 </p>
                 <footer>
-                    <a href="#" class="button">Continue Reading</a>
+                    <a href="/src/pages/AboutUs.php" class="button">Weiter lesen</a>
                 </footer>
             </article>
-
-        </div>
-
-        <!-- Features -->
-        <div class="wrapper style1">
-
-            <section id="features" class="container special">
-                <header>
-                    <h2>Morbi ullamcorper et varius leo lacus</h2>
-                    <p>Ipsum volutpat consectetur orci metus consequat imperdiet duis integer semper magna.</p>
-                </header>
-                <div class="row">
-                    <article class="col-4 col-12-mobile special">
-                        <div class="image featured"><img src="/src/images/pic07.jpg" alt="" /></div>
-                        <header>
-                            <h3><a href="#">Gravida aliquam penatibus</a></h3>
-                        </header>
-                        <p>
-                            Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-                        </p>
-                    </article>
-                    <article class="col-4 col-12-mobile special">
-                        <div class="image featured"><img src="/src/images/pic08.jpg" alt="" /></div>
-                        <header>
-                            <h3><a href="#">Sed quis rhoncus placerat</a></h3>
-                        </header>
-                        <p>
-                            Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-                        </p>
-                    </article>
-                    <article class="col-4 col-12-mobile special">
-                        <div class="image featured"><img src="/src/images/pic09.jpg" alt="" /></div>
-                        <header>
-                            <h3><a href="#">Magna laoreet et aliquam</a></h3>
-                        </header>
-                        <p>
-                            Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-                        </p>
-                    </article>
-                </div>
-            </section>
 
         </div>
 
