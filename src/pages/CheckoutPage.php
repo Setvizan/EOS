@@ -19,40 +19,8 @@
 
         <!-- Main -->
         <div class="wrapper style1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-12-mobile imp-mobile" id="content">
-                        <?php foreach ($data as $product) : ?>
-                            <div class="card mt-4">
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <img src="<?= $product->IMAGE_PATH == "/" ? "/src/images/pic03.jpg" : $product->IMAGE_PATH ?> " class="img-fluid" alt="...">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="row">
-                                            <div class="col-md-9">
-                                                <h5 class="card-title mt-3"><?= $product->NAME ?></h5>
-                                                <p class="card-text mt-3"><small class="text-muted"><?= $product->COST ?></small></p>
-                                            </div>
-                                            <div class="col-md-1">
-                                                <a href="/src/site/ShoppingCartController.php?removeCart=<?= $product->ID ?>" class="btn btn-danger mt-3">REMOVE</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-                <hr />
-                <div>
-                    TOTAL: <?php $ttl = 0.0; foreach($data as $p) $ttl+=$p->COST; echo $ttl; ?>
-                </div>
-                <div>
-                    <a href="/src/site/CheckoutController.php" class="btn btn-primary mt-3">CHECKOUT</a>
-                </div>
-            </div>
-
+            <h2>Zahlen</h2>
+            <p>This isn't implemented. - Nino 5/12/2022 1:48</p>
         </div>
 
         <!-- Footer -->

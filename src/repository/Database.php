@@ -1,4 +1,8 @@
 <?php 
+define("DB_HOST", "localhost");
+define("DB_USER", "nayun_dbu");
+define("DB_PASS", "Gr4CYvHzzmKPu8T");
+define("DB_NAME", "nayun_moduledb");
 
 class Database
 {
